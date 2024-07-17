@@ -1,4 +1,14 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>史圣锐的Linux记录博客</title><link>https://Srhampions.github.io/409BOY.github.io</link><description>旨在记录日常工作代码与所学技术原理/工具/流程等，方便后来者的学习更方便自己（毕竟云服务器目前还很贵）</description><copyright>史圣锐的Linux记录博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/36289822?v=4</url><title>avatar</title><link>https://Srhampions.github.io/409BOY.github.io</link></image><lastBuildDate>Wed, 17 Jul 2024 07:20:04 +0000</lastBuildDate><managingEditor>史圣锐的Linux记录博客</managingEditor><ttl>60</ttl><webMaster>史圣锐的Linux记录博客</webMaster><item><title>parsnp进化树构建</title><link>https://Srhampions.github.io/409BOY.github.io/post/parsnp-jin-hua-shu-gou-jian.html</link><description>```conda activate parsnp&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>史圣锐的Linux记录博客</title><link>https://Srhampions.github.io/409BOY.github.io</link><description>旨在记录日常工作代码与所学技术原理/工具/流程等，方便后来者的学习更方便自己（毕竟云服务器目前还很贵）</description><copyright>史圣锐的Linux记录博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/36289822?v=4</url><title>avatar</title><link>https://Srhampions.github.io/409BOY.github.io</link></image><lastBuildDate>Wed, 17 Jul 2024 15:15:14 +0000</lastBuildDate><managingEditor>史圣锐的Linux记录博客</managingEditor><ttl>60</ttl><webMaster>史圣锐的Linux记录博客</webMaster><item><title>服务器运维代码</title><link>https://Srhampions.github.io/409BOY.github.io/post/fu-wu-qi-yun-wei-dai-ma.html</link><description>1. 硬盘使用情况查看&#13;
+&#13;
+   ```bash&#13;
+   df -h  # 查看硬盘剩余空间&#13;
+   sudo fdisk -l # 查看硬盘的分区&#13;
+   sudo du -sh /home/* # 查看Linux中各个用户使用的存储空间大小&#13;
+   ```&#13;
+&#13;
+   &#13;
+&#13;
+2. 。</description><guid isPermaLink="true">https://Srhampions.github.io/409BOY.github.io/post/fu-wu-qi-yun-wei-dai-ma.html</guid><pubDate>Wed, 17 Jul 2024 15:14:52 +0000</pubDate></item><item><title>parsnp进化树构建</title><link>https://Srhampions.github.io/409BOY.github.io/post/parsnp-jin-hua-shu-gou-jian.html</link><description>```conda activate parsnp&#13;
 nohup parsnp -c -p 16 -n mafft -r ./sc263.fa -d ./*.fa -o parsnp &amp;&#13;
 ```。</description><guid isPermaLink="true">https://Srhampions.github.io/409BOY.github.io/post/parsnp-jin-hua-shu-gou-jian.html</guid><pubDate>Wed, 17 Jul 2024 07:08:32 +0000</pubDate></item></channel></rss>
