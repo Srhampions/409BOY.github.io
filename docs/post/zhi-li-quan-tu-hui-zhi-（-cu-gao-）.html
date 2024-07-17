@@ -9,17 +9,111 @@
         let theme = localStorage.getItem("meek_theme") || "light";
         document.documentElement.setAttribute("data-color-mode", theme);
     </script>
-<meta name="description" content="```conda activate parsnp
-nohup parsnp -c -p 16 -n mafft -r ./sc263.fa -d ./*.fa -o parsnp &
-```。">
-<meta property="og:title" content="parsnp进化树构建">
-<meta property="og:description" content="```conda activate parsnp
-nohup parsnp -c -p 16 -n mafft -r ./sc263.fa -d ./*.fa -o parsnp &
-```。">
+<meta name="description" content="注释>SnapGene修正>出图
+
+
+[[Center for Genomic Epidemiology (dtu.dk)](http://genepi.food.dtu.dk/resfinder)](http://genepi.food.dtu.dk/resfinder) ResFinder上传fa文件
+ISFinder 上传fa文件
+![[质粒圈图绘制-1.png]]勾选show unknown mutations
+
+##### 耐药基因修正
+
+- 结合Position in contig一栏下面的位置进行查找，序列Ctrl+G进行位置定位；
+- 更正特征名/contig/gene/product/位置下的错误描述，判断正向反向（根据起始密码子ATG/CTG/GTG/TTG/）（终止密码子TAA/TAT/TAG/TGA/）
+- 暂时保存为Genbank Standard 选项，.gb为后缀的文件
+
+***
+
+SnapGene新建CDS区操作：
+编辑 -> 选择一段（Ctrl+>） ->  上一级 特征 -> 
+
+***
+
+##### IS修正
+
+- 上传.fa文件直接点击BLAST
+- 只挑选Score大于100的进行注释补全
+- 观察Length/覆盖度/相似度，跟上面操作同样，判断正向反向错误、核对/product/gene/note，核对起始终止位置和碱基对大小
+- 修正完毕保存为.gb文件
+- 用Artemis打开
+  - 酌情删除无意义片段
+  - 对照耐药基因比对结果，进行着色（color=2）标红
+  - IS开头的着色（color=1）灰色
+  - 点击File-Open DNAplotter
+  - 删除source
+  - Option > Track Manager调节大小与位置
+  - 点击 Options -> Features进行箭头标注
+  - Graph > CG两项
+  - 保存为svg格式文件
+- 用AI打开
+  - 选中图像
+  - 对象>取消编组
+  - 对应加标签
+  - 保存为svg文件，导出为itf图片
+    Done
+
+
+环境比对图流程：
+注释>Resfinder+IS在SnapGene中修正>gb文件导入Easyfig中生成
+环境比对图-注意事项：
+
+- 相同部分要完全一致，名字跟区域都是
+- 名称放不下时可以将IS等放下面。">
+<meta property="og:title" content="质粒圈图绘制（粗稿）">
+<meta property="og:description" content="注释>SnapGene修正>出图
+
+
+[[Center for Genomic Epidemiology (dtu.dk)](http://genepi.food.dtu.dk/resfinder)](http://genepi.food.dtu.dk/resfinder) ResFinder上传fa文件
+ISFinder 上传fa文件
+![[质粒圈图绘制-1.png]]勾选show unknown mutations
+
+##### 耐药基因修正
+
+- 结合Position in contig一栏下面的位置进行查找，序列Ctrl+G进行位置定位；
+- 更正特征名/contig/gene/product/位置下的错误描述，判断正向反向（根据起始密码子ATG/CTG/GTG/TTG/）（终止密码子TAA/TAT/TAG/TGA/）
+- 暂时保存为Genbank Standard 选项，.gb为后缀的文件
+
+***
+
+SnapGene新建CDS区操作：
+编辑 -> 选择一段（Ctrl+>） ->  上一级 特征 -> 
+
+***
+
+##### IS修正
+
+- 上传.fa文件直接点击BLAST
+- 只挑选Score大于100的进行注释补全
+- 观察Length/覆盖度/相似度，跟上面操作同样，判断正向反向错误、核对/product/gene/note，核对起始终止位置和碱基对大小
+- 修正完毕保存为.gb文件
+- 用Artemis打开
+  - 酌情删除无意义片段
+  - 对照耐药基因比对结果，进行着色（color=2）标红
+  - IS开头的着色（color=1）灰色
+  - 点击File-Open DNAplotter
+  - 删除source
+  - Option > Track Manager调节大小与位置
+  - 点击 Options -> Features进行箭头标注
+  - Graph > CG两项
+  - 保存为svg格式文件
+- 用AI打开
+  - 选中图像
+  - 对象>取消编组
+  - 对应加标签
+  - 保存为svg文件，导出为itf图片
+    Done
+
+
+环境比对图流程：
+注释>Resfinder+IS在SnapGene中修正>gb文件导入Easyfig中生成
+环境比对图-注意事项：
+
+- 相同部分要完全一致，名字跟区域都是
+- 名称放不下时可以将IS等放下面。">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://Srhampions.github.io/409BOY.github.io/post/parsnp-jin-hua-shu-gou-jian.html">
+<meta property="og:url" content="https://Srhampions.github.io/409BOY.github.io/post/zhi-li-quan-tu-hui-zhi-%EF%BC%88-cu-gao-%EF%BC%89.html">
 <meta property="og:image" content="https://avatars.githubusercontent.com/u/36289822?v=4">
-<title>parsnp进化树构建</title>
+<title>质粒圈图绘制（粗稿）</title>
 
 
 </head>
@@ -50,7 +144,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 
 <body>
     <div id="header">
-<h1 class="postTitle">parsnp进化树构建</h1>
+<h1 class="postTitle">质粒圈图绘制（粗稿）</h1>
 <div class="title-right">
     <a href="https://Srhampions.github.io/409BOY.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
         <svg class="octicon" width="16" height="16">
@@ -58,7 +152,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
         </svg>
     </a>
     
-    <a href="https://github.com/Srhampions/409BOY.github.io/issues/1" target="_blank" class="btn btn-invisible circle" title="Issue">
+    <a href="https://github.com/Srhampions/409BOY.github.io/issues/8" target="_blank" class="btn btn-invisible circle" title="Issue">
         <svg class="octicon" width="16" height="16">
             <path id="pathIssue" fill-rule="evenodd"></path>
         </svg>
@@ -74,8 +168,56 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </div>
 </div>
     <div id="content">
-<div class="markdown-body" id="postBody"><pre lang="conda" data-meta="activate parsnp" class="notranslate"><code class="notranslate">nohup parsnp -c -p 16 -n mafft -r ./sc263.fa -d ./*.fa -o parsnp &amp;
-</code></pre></div>
+<div class="markdown-body" id="postBody"><p>注释&gt;SnapGene修正&gt;出图</p>
+<p>[<a href="http://genepi.food.dtu.dk/resfinder" rel="nofollow">Center for Genomic Epidemiology (dtu.dk)</a>](<a href="http://genepi.food.dtu.dk/resfinder" rel="nofollow">http://genepi.food.dtu.dk/resfinder</a>) ResFinder上传fa文件<br>
+ISFinder 上传fa文件<br>
+![[质粒圈图绘制-1.png]]勾选show unknown mutations</p>
+<h5>耐药基因修正</h5>
+<ul>
+<li>结合Position in contig一栏下面的位置进行查找，序列Ctrl+G进行位置定位；</li>
+<li>更正特征名/contig/gene/product/位置下的错误描述，判断正向反向（根据起始密码子ATG/CTG/GTG/TTG/）（终止密码子TAA/TAT/TAG/TGA/）</li>
+<li>暂时保存为Genbank Standard 选项，.gb为后缀的文件</li>
+</ul>
+<hr>
+<p>SnapGene新建CDS区操作：<br>
+编辑 -&gt; 选择一段（Ctrl+&gt;） -&gt;  上一级 特征 -&gt;</p>
+<hr>
+<h5>IS修正</h5>
+<ul>
+<li>上传.fa文件直接点击BLAST</li>
+<li>只挑选Score大于100的进行注释补全</li>
+<li>观察Length/覆盖度/相似度，跟上面操作同样，判断正向反向错误、核对/product/gene/note，核对起始终止位置和碱基对大小</li>
+<li>修正完毕保存为.gb文件</li>
+<li>用Artemis打开
+<ul>
+<li>酌情删除无意义片段</li>
+<li>对照耐药基因比对结果，进行着色（color=2）标红</li>
+<li>IS开头的着色（color=1）灰色</li>
+<li>点击File-Open DNAplotter</li>
+<li>删除source</li>
+<li>Option &gt; Track Manager调节大小与位置</li>
+<li>点击 Options -&gt; Features进行箭头标注</li>
+<li>Graph &gt; CG两项</li>
+<li>保存为svg格式文件</li>
+</ul>
+</li>
+<li>用AI打开
+<ul>
+<li>选中图像</li>
+<li>对象&gt;取消编组</li>
+<li>对应加标签</li>
+<li>保存为svg文件，导出为itf图片<br>
+Done</li>
+</ul>
+</li>
+</ul>
+<p>环境比对图流程：<br>
+注释&gt;Resfinder+IS在SnapGene中修正&gt;gb文件导入Easyfig中生成<br>
+环境比对图-注意事项：</p>
+<ul>
+<li>相同部分要完全一致，名字跟区域都是</li>
+<li>名称放不下时可以将IS等放下面</li>
+</ul></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
