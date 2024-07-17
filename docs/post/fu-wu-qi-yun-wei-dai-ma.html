@@ -9,29 +9,51 @@
         let theme = localStorage.getItem("meek_theme") || "light";
         document.documentElement.setAttribute("data-color-mode", theme);
     </script>
-<meta name="description" content="1. 硬盘使用情况查看
+<meta name="description" content="#Linux #笔记 #代码
 
-   ```bash
-   df -h  # 查看硬盘剩余空间
-   sudo fdisk -l # 查看硬盘的分区
-   sudo du -sh /home/* # 查看Linux中各个用户使用的存储空间大小
-   ```
+##### 1. for循环
 
-   
+```bash
+for 变量 in 列表
+do
+	循环
+done
+```
 
-2. 。">
+###### Example
+
+```bash
+for i in 1 2 3;do          #写一个变量，列表写了3个参数
+echo '$i'                  #打印一下i这个变量的值
+done                       #for循环结束
+```
+
+##### 2. Linux管道符‘|’
+
+管道符主要用于多重命令处理，前面命令的打印结果作为后面命令的输入。">
 <meta property="og:title" content="服务器运维代码">
-<meta property="og:description" content="1. 硬盘使用情况查看
+<meta property="og:description" content="#Linux #笔记 #代码
 
-   ```bash
-   df -h  # 查看硬盘剩余空间
-   sudo fdisk -l # 查看硬盘的分区
-   sudo du -sh /home/* # 查看Linux中各个用户使用的存储空间大小
-   ```
+##### 1. for循环
 
-   
+```bash
+for 变量 in 列表
+do
+	循环
+done
+```
 
-2. 。">
+###### Example
+
+```bash
+for i in 1 2 3;do          #写一个变量，列表写了3个参数
+echo '$i'                  #打印一下i这个变量的值
+done                       #for循环结束
+```
+
+##### 2. Linux管道符‘|’
+
+管道符主要用于多重命令处理，前面命令的打印结果作为后面命令的输入。">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://Srhampions.github.io/409BOY.github.io/post/fu-wu-qi-yun-wei-dai-ma.html">
 <meta property="og:image" content="https://avatars.githubusercontent.com/u/36289822?v=4">
@@ -90,15 +112,124 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </div>
 </div>
     <div id="content">
-<div class="markdown-body" id="postBody"><ol>
-<li>
-<p>硬盘使用情况查看</p>
+<div class="markdown-body" id="postBody"><p>#Linux #笔记 #代码</p>
+<h5>1. for循环</h5>
+<div class="highlight highlight-source-shell"><pre class="notranslate"><span class="pl-k">for</span> <span class="pl-smi">变量</span> <span class="pl-k">in</span> 列表
+<span class="pl-k">do</span>
+	循环
+<span class="pl-k">done</span></pre></div>
+<h6>Example</h6>
+<div class="highlight highlight-source-shell"><pre class="notranslate"><span class="pl-k">for</span> <span class="pl-smi">i</span> <span class="pl-k">in</span> 1 2 3<span class="pl-k">;</span><span class="pl-k">do</span>          <span class="pl-c"><span class="pl-c">#</span>写一个变量，列表写了3个参数</span>
+<span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">"</span><span class="pl-smi">$i</span><span class="pl-pds">"</span></span>                  <span class="pl-c"><span class="pl-c">#</span>打印一下i这个变量的值</span>
+<span class="pl-k">done</span>                       <span class="pl-c"><span class="pl-c">#</span>for循环结束</span></pre></div>
+<h5>2. Linux管道符‘|’</h5>
+<p>管道符主要用于多重命令处理，前面命令的打印结果作为后面命令的输入。简单点说就是，就像工厂的流水线一样，进行完一道工序后，继续传送给下一道工序处理</p>
+<h5>3. 正则表达式[<a href="https://github.com/Srhampions/409BOY.github.io/issues/%5BLinux%20sed%20%E5%91%BD%E4%BB%A4%20%7C%20%E8%8F%9C%E9%B8%9F%E6%95%99%E7%A8%8B%20(runoob.com)%5D(https://www.runoob.com/linux/linux-comm-sed.html)">sed</a>](<a href="https://www.runoob.com/linux/linux-comm-sed.html" rel="nofollow">Linux sed 命令 | 菜鸟教程 (runoob.com)</a>)<strong>替换</strong>命令‘s/ /g’</h5>
+<h6>Example</h6>
+<div class="highlight highlight-source-shell"><pre class="notranslate">2,5 s/abc/your_word/g                <span class="pl-c"><span class="pl-c">#</span>第2到第5行，把abc替换成your_word</span></pre></div>
+<h5>4. nohup任务查看时间</h5>
+<div class="highlight highlight-source-shell"><pre class="notranslate"><span class="pl-c1">jobs</span> -l     <span class="pl-c"><span class="pl-c">#</span>查看PID号</span>
+ps -p <span class="pl-k">&lt;</span>pid<span class="pl-k">&gt;</span> -o lstart</pre></div>
+<h5>5. gff是roray的输入文件，用来输出泛基因组图</h5>
+<h5>6. roray</h5>
+<h5>7. -exec 使用</h5>
+<p>![[Linux仿学笔记.png]]</p>
+<div class="highlight highlight-source-shell"><pre class="notranslate">find ./PATH1 -type f -name <span class="pl-s"><span class="pl-pds">"</span>*.fa<span class="pl-pds">"</span></span> -exec cp {} ./PATH2 <span class="pl-cce">\;</span>
+<span class="pl-c"><span class="pl-c">#</span> 该段是将路径PAHT1中的.fa后缀文件全筛选出来，然后复制到PATH2</span></pre></div>
+<h5>8. awk使用</h5>
+<p><strong>语法</strong><br>
+<code class="notranslate">awk 'pattern { action }' input_file</code></p>
+<ul>
+<li><code class="notranslate">pattern</code>用于指定条件，用于筛选需要处理的行。</li>
+<li><code class="notranslate">action</code>定义需要执行的操作，可以是输出、计算、格式化等。</li>
+<li><code class="notranslate">input_file</code>是要处理的输入文件</li>
+</ul>
+<div class="highlight highlight-source-shell"><pre class="notranslate">awk [选项参数] <span class="pl-s"><span class="pl-pds">'</span>script<span class="pl-pds">'</span></span> value file
+或
+awk [选项参数] -f scriptfile value file</pre></div>
+<p>选项参数说明：<br>
+-F or fs：指定输入文件的分隔符<br>
+-v  ：赋值一个用户定义变量<br>
+-f：从脚本文件中读取awk命令</p>
+<ul>
+<li>用法一：<br>
+<code class="notranslate">awk '{print $1,$4}' log.txt</code> # 每行按空格或TAB分隔，输出文本中的1、4项</li>
+<li>用法二：<br>
+<code class="notranslate">awk -F, '{print $1,$2}' log.txt</code> # 每行按","分隔，输出文本中的1、2项</li>
+</ul>
+<div class="highlight highlight-source-shell"><pre class="notranslate">使用<span class="pl-s"><span class="pl-pds">"</span>,<span class="pl-pds">"</span></span>分割
+ $  awk -F, <span class="pl-s"><span class="pl-pds">'</span>{print $1,$2}<span class="pl-pds">'</span></span>   log.txt
+ ---------------------------------------------
+ 2 this is a <span class="pl-c1">test</span>
+ 3 Do you like awk
+ This<span class="pl-s"><span class="pl-pds">'</span>s a test</span>
+<span class="pl-s"> 10 There are orange apple</span>
+<span class="pl-s"> # 或者使用内建变量</span>
+<span class="pl-s"> $ awk <span class="pl-pds">'</span></span>BEGIN{FS=<span class="pl-s"><span class="pl-pds">"</span>,<span class="pl-pds">"</span></span>} {print <span class="pl-smi">$1</span>,<span class="pl-smi">$2</span>}<span class="pl-s"><span class="pl-pds">'</span>     log.txt</span>
+<span class="pl-s"> ---------------------------------------------</span>
+<span class="pl-s"> 2 this is a test</span>
+<span class="pl-s"> 3 Do you like awk</span>
+<span class="pl-s"> This<span class="pl-pds">'</span></span>s a <span class="pl-c1">test</span>
+ 10 There are orange apple
+ <span class="pl-c"><span class="pl-c">#</span> 使用多个分隔符.先使用空格分割，然后对分割结果再使用","分割</span>
+ $ awk -F <span class="pl-s"><span class="pl-pds">'</span>[ ,]<span class="pl-pds">'</span></span>  <span class="pl-s"><span class="pl-pds">'</span>{print $1,$2,$5}<span class="pl-pds">'</span></span>   log.txt
+ ---------------------------------------------
+ 2 this <span class="pl-c1">test</span>
+ 3 Are awk
+ This<span class="pl-s"><span class="pl-pds">'</span>s a</span>
+<span class="pl-s"> 10 There apple</span>
+<span class="pl-s"> # 先分割，再计数123456</span></pre></div>
+<ul>
+<li>用法三：-v 赋值</li>
+</ul>
+<div class="highlight highlight-source-shell"><pre class="notranslate"> $ awk -va=1 <span class="pl-s"><span class="pl-pds">'</span>{print $1,$1+a}<span class="pl-pds">'</span></span> log.txt
+ ---------------------------------------------
+ 2 3
+ 3 4
+ This<span class="pl-s"><span class="pl-pds">'</span>s 1</span>
+<span class="pl-s"> 10 11</span>
+<span class="pl-s"> $ awk -va=1 -vb=s <span class="pl-pds">'</span></span>{print <span class="pl-smi">$1</span>,<span class="pl-smi">$1</span>+a,<span class="pl-smi">$1</span>b}<span class="pl-s"><span class="pl-pds">'</span> log.txt</span>
+<span class="pl-s"> ---------------------------------------------</span>
+<span class="pl-s"> 2 3 2s</span>
+<span class="pl-s"> 3 4 3s</span>
+<span class="pl-s"> This<span class="pl-pds">'</span></span>s 1 This<span class="pl-s"><span class="pl-pds">'</span>ss</span>
+<span class="pl-s"> 10 11 10s</span>
+<span class="pl-s"></span></pre></div>
+<h5>9. uniq -c</h5>
+<p>统计重复的行数<br>
+通常与sort搭配使用<br>
+<code class="notranslate">sort testfile1 | uniq -c</code></p>
+<h5>10</h5>
+<div class="highlight highlight-source-shell"><pre class="notranslate">(base) dxd@henau-PowerEdge-R940xa:<span class="pl-k">~</span>/work/yu_runhao/169_henan_enter_20240319$ sed -i <span class="pl-s"><span class="pl-pds">'</span>s/\r//g<span class="pl-pds">'</span></span> dele.txt
+(base) dxd@henau-PowerEdge-R940xa:<span class="pl-k">~</span>/work/yu_runhao/169_henan_enter_20240319$ <span class="pl-k">for</span> <span class="pl-smi">i</span> <span class="pl-k">in</span> <span class="pl-s"><span class="pl-pds">`</span>cat dele.txt<span class="pl-pds">`</span></span><span class="pl-k">;</span><span class="pl-k">do</span> rm <span class="pl-smi">$i</span>.fna<span class="pl-k">;</span><span class="pl-k">done</span>
+</pre></div>
+<h5>11 合并fna文件</h5>
+<div class="highlight highlight-source-shell"><pre class="notranslate">cat 123456<span class="pl-k">*</span>.fna <span class="pl-k">&gt;</span> 123456.fna</pre></div>
+<h5>12 显示文件内的分隔符</h5>
+<div class="highlight highlight-source-shell"><pre class="notranslate">sed -n l file.txt</pre></div>
+<h5>13 提取第一列内容</h5>
+<div class="highlight highlight-source-shell"><pre class="notranslate">cut -f1 -d<span class="pl-s"><span class="pl-pds">'</span> <span class="pl-pds">'</span></span> your_file.txt</pre></div>
+<p><code class="notranslate">cut -f1</code>命令用于提取文本文件中每一行的第一个字段（以制表符或空格等作为字段分隔符）。这个命令可以帮助你从文件中提取特定字段的数据。<br>
+如果你有一个文本文件，想要提取每行的第一个字段，可以使用类似以下的命令：</p>
+<p>在这个命令中，<code class="notranslate">-f1</code>表示提取第一个字段，<code class="notranslate">-d' '</code>表示字段之间的分隔符是空格。你可以根据实际情况替换<code class="notranslate">your_file.txt</code>和分隔符来提取文件中的其他字段。</p>
+<h5>14 文件名用txt文件里的第二列名称替代</h5>
+<div class="highlight highlight-source-shell"><pre class="notranslate">(base) dxd@henau-PowerEdge-R940xa:<span class="pl-k">~</span>/work/yu_runhao/169_henan_enter_20240319$ cat name1.sh
+<span class="pl-c"><span class="pl-c">#!</span>/bin/bash</span>
+
+<span class="pl-c"><span class="pl-c">#</span> 从包含文件名和目标文件名的文本文件中逐行读取数据</span>
+<span class="pl-c"><span class="pl-c">#</span> 使用while循环读取CSV文件中的每一行，并逐行进行重命名操作</span>
+<span class="pl-k">while</span> IFS=<span class="pl-s"><span class="pl-pds">$'</span> <span class="pl-pds">'</span></span> <span class="pl-c1">read</span> -r original_name new_name<span class="pl-k">;</span> <span class="pl-k">do</span>
+    mv <span class="pl-s"><span class="pl-pds">"</span><span class="pl-smi">$original_name</span><span class="pl-pds">"</span></span> <span class="pl-s"><span class="pl-pds">"</span><span class="pl-smi">$new_name</span><span class="pl-pds">"</span></span>
+<span class="pl-k">done</span> <span class="pl-k">&lt;</span> file_list.txt
+</pre></div>
+<p><a href="https://git@bitbucket.org/genomicepidemiology/resfinder_db.git" rel="nofollow">https://git@bitbucket.org/genomicepidemiology/resfinder_db.git</a></p>
+<h5>15 uniq命令</h5>
+<p><code class="notranslate">uniq</code>命令用于过滤或报告输入中重复的行。<br>
+通常结合<code class="notranslate">sort</code>命令使用<code class="notranslate">uniq</code>，以确保输入已排序，这样<code class="notranslate">uniq</code>才能正常工作。</p>
+<p>#####15. 硬盘使用情况查看</p>
 <div class="highlight highlight-source-shell"><pre class="notranslate">df -h  <span class="pl-c"><span class="pl-c">#</span> 查看硬盘剩余空间</span>
 sudo fdisk -l <span class="pl-c"><span class="pl-c">#</span> 查看硬盘的分区</span>
-sudo du -sh /home/<span class="pl-k">*</span> <span class="pl-c"><span class="pl-c">#</span> 查看Linux中各个用户使用的存储空间大小</span></pre></div>
-</li>
-<li></li>
-</ol></div>
+sudo du -sh /home/<span class="pl-k">*</span> <span class="pl-c"><span class="pl-c">#</span> 查看Linux中各个用户使用的存储空间大小</span></pre></div></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
